@@ -7,7 +7,7 @@ describe('测试银行卡生成和校验', () => {
   bcBuilder(20).forEach(bank => {
     const bankNo = bank[0]
     const bankInfo = bank[1]
-    it(`${bankNo} ${bankInfo}`, function () {
+    it(`${bankNo} ${bankInfo}`, () => {
       expect(bcValidator(bankNo)).to.equal(true);
     })
   })

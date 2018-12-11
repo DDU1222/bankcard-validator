@@ -1,5 +1,7 @@
 # bankcard-validator
+[![npm version](https://badge.fury.io/js/bankcard-validator.svg)](http://badge.fury.io/js/bankcard-validator)
 
+功能介绍：
   1、Luhn算法（模10算法）检验银行卡号正确性
   2、批量生成符合规则的银行卡号
 
@@ -49,4 +51,4 @@ $ npm test
 
 ## 参考资料
 
-基于Luhn算法的银行卡卡号的格式校验 (https://www.jianshu.com/p/193d8b84a6a1)
+[基于Luhn算法的银行卡卡号的格式校验](https://www.jianshu.com/p/193d8b84a6a1)
