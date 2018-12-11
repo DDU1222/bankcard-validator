@@ -18,7 +18,8 @@
     "validate",
     "bankcard",
     "luhn",
-    "validator"
+    "validator",
+    "javascript"
   ],
   "author": "chenxue <chenxueamour@gmail.com> (https://github.com/DDU1222)",
   "license": "MIT"
