@@ -11,7 +11,9 @@ $ npm install bankcard-validator
 ```
 
 ```javascript
-import * as vaildator from 'bankcard-validator';
+import bcValidator from 'bankcard-validator';
+
+bcValidator('银行卡号')
 ```
 
 or 
@@ -23,6 +25,7 @@ or
    * @param {String} bankcard 
    * @return {Boolean}
    * /
+   
   bcValidator('银行卡号')
 </script>
 ```
@@ -34,6 +37,7 @@ or
    * @param {Number} num 生成银行卡个数
    * @return {Array} 如：[['6226322493250925', '华夏银行(借记卡)']]
    * /
+  
   bcBuilder(20)
 </script>
 ```
