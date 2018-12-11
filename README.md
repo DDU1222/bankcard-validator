@@ -5,6 +5,9 @@
   1、Luhn算法（模10算法）检验银行卡号正确性
   2、批量生成符合规则的银行卡号
 
+## Try 
+[批量生成银行卡号](https://ddu1222.github.io/bankcard-validator/bcBuilder.html)
+[校验银行卡号](https://ddu1222.github.io/bankcard-validator/bcValidator.html)
 
 ## Install
 
