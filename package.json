@@ -1,6 +1,6 @@
 {
   "name": "bankcard-validator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": " verify bank card number base on Luhn algorithm",
   "main": "src/index.js",
   "dependencies": {
