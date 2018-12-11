@@ -1,0 +1,25 @@
+{
+  "name": "bankcard-validator",
+  "version": "1.0.0",
+  "description": " verify bank card number base on Luhn algorithm",
+  "main": "src/index.js",
+  "dependencies": {
+    "chai": "^4.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha test/*.js --require babel-core/register"
+  },
+  "keywords": [
+    "validate",
+    "bankcard",
+    "luhn",
+    "validator"
+  ],
+  "author": "chenxue <chenxueamour@gmail.com> (https://github.com/DDU1222)",
+  "license": "MIT"
+}

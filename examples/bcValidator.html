@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>测试银行卡校验</title>
+    <script type="text/javascript" src='../src/bcValidator.js'></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+       function validate() {
+         const isVaild = bcValidator(document.getElementById("bankCardNod").value)
+         alert(isVaild ? '正确' : '不正确')
+       }
+    </script>
+    <div>
+      <label>输入银行卡号</label><input id="bankCardNod"></input>
+    </div>
+    <button onClick="validate()">校验</button>
+  </body>
+</html>

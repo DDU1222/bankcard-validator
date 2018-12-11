@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>测试银行卡生成</title>
+    <script type="text/javascript" src='../src/bcBuilder.js'></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+       function getCards() {
+         document.getElementById("cards").innerHTML = bcBuilder(20).join('<br/>')
+       }
+    </script>
+    <div>
+      <button onClick="getCards()">生成20张随机的银行卡号</button>
+      <fieldset>
+        <legend>卡号列表</legend>
+        <div id="cards"></div>
+      </fieldset>
+    </div>
+  </body>
+</html>
