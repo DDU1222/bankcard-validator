@@ -4,10 +4,10 @@
   2、批量生成符合规则的银行卡号
 
 
-## 安装
+## Install
 
 ```bash
-npm install bankcard-validator
+$ npm install bankcard-validator
 ```
 
 ```javascript
@@ -20,9 +20,10 @@ or
 <script type="text/javascript" src='pathTo/bcValidator.js'></script>
 <script>
   /**
-   * @param {string} bankcard 
+   * @param {String} bankcard 
+   * @return {Boolean}
    * /
-  bcValidator('银行卡号') // => boolean
+  bcValidator('银行卡号')
 </script>
 ```
 
@@ -30,10 +31,16 @@ or
 <script type="text/javascript" src='pathTo/bcBuilder.js'></script>
 <script>
   /**
-   * @param {number} num 生成银行卡个数
+   * @param {Number} num 生成银行卡个数
+   * @return {Array} 如：[['6226322493250925', '华夏银行(借记卡)']]
    * /
-  bcBuilder(20) // => [['6226322493250925', '华夏银行(借记卡)']]
+  bcBuilder(20)
 </script>
+```
+
+## Tests
+```bash
+$ npm test
 ```
 
 ## 参考资料
