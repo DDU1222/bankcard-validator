@@ -16,7 +16,7 @@
    */
   const bcValidator = (bankcard) => {
     if (typeof bankcard !== 'string') return false
-    if (bankcard.length < 14 || bankcard.length > 19) return false
+    if (!/^\d{14,19}$/.test(bankcard)) return false
     const waitToValidateCode = bankcard.slice(-1)
     const verificationCode = getVerificationCode(bankcard.substring(0, bankcard.length-1))
     return waitToValidateCode == verificationCode
