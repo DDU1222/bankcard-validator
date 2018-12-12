@@ -1,26 +1,30 @@
-((global, factory) => {
+"use strict";
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+(function (global, factory) {
   // CommonJS
-  if (typeof module === "object" && typeof module.exports === "object") {
-    module.exports = factory()
-  // AMD / RequireJS
+  if ((typeof module === "undefined" ? "undefined" : _typeof(module)) === "object" && _typeof(module.exports) === "object") {
+    module.exports = factory();
+    // AMD / RequireJS
   } else if (typeof define === 'function' && define.amd) {
-    define(factory)
+    define(factory);
   } else {
-    global.bcValidator = factory()
+    global.bcValidator = factory();
   }
-})(typeof window !== "undefined" ? window : this, () => {
+})(typeof window !== "undefined" ? window : undefined, function () {
   /**
    * 
    * @param {string} bankcard
    * 支持 [14, 19] 位数字
    */
-  const bcValidator = (bankcard) => {
-    if (typeof bankcard !== 'string') return false
-    if (bankcard.length < 14 || bankcard.length > 19) return false
-    const waitToValidateCode = bankcard.slice(-1)
-    const verificationCode = getVerificationCode(bankcard.substring(0, bankcard.length-1))
-    return waitToValidateCode == verificationCode
-  }
+  var bcValidator = function bcValidator(bankcard) {
+    if (typeof bankcard !== 'string') return false;
+    if (!/^\d{14,19}$/.test(bankcard)) return false;
+    var waitToValidateCode = bankcard.slice(-1);
+    var verificationCode = getVerificationCode(bankcard.substring(0, bankcard.length - 1));
+    return waitToValidateCode == verificationCode;
+  };
   /**
    * 
    * @param {string} bankcard 
@@ -30,17 +34,27 @@
    * 第二步： 把在第一步中获得的乘积的各位数字相加，然后再与原号码中未乘2的各位数字相加；
    * 第三步：对于第二步求和值中个位数求10的补数，如果个位数为0则该校验码为0。
    */
-  const getVerificationCode = (bankcard) => {
-    let reverseCardArr = bankcard.split('').reverse()
+  var getVerificationCode = function getVerificationCode(bankcard) {
+    var reverseCardArr = bankcard.split('').reverse();
     // 偶数和
-    const evenSum = reverseCardArr.filter((r, i) => i % 2 === 1).reduce((c, r) => +c + +r)
+    var evenSum = reverseCardArr.filter(function (r, i) {
+      return i % 2 === 1;
+    }).reduce(function (c, r) {
+      return +c + +r;
+    });
     // 奇数*2 各个位数和
-    const oddSum = reverseCardArr.filter((r, i) => i % 2 === 0).map(r => r * 2).reduce((accumulator, currentValue) => accumulator +  +('' + currentValue).split('').reduce((a, c) => +a + +c ), 0)
-    const verificationCode = 10 - ((oddSum + evenSum) % 10 || 10)
-    return verificationCode
-  }
+    var oddSum = reverseCardArr.filter(function (r, i) {
+      return i % 2 === 0;
+    }).map(function (r) {
+      return r * 2;
+    }).reduce(function (accumulator, currentValue) {
+      return accumulator + +('' + currentValue).split('').reduce(function (a, c) {
+        return +a + +c;
+      });
+    }, 0);
+    var verificationCode = 10 - ((oddSum + evenSum) % 10 || 10);
+    return verificationCode;
+  };
 
-  
-  
-  return bcValidator
-})
+  return bcValidator;
+});
