@@ -8,10 +8,18 @@
   <body>
     <script type="text/javascript">
        function getCards() {
-         document.getElementById("cards").innerHTML = bcBuilder(20).join('<br/>')
+         var bankType = document.getElementById("bankType").value || ''
+         console.log('xxxxx', bankType)
+         document.getElementById("cards").innerHTML = bcBuilder(20, bankType).join('<br/>')
        }
     </script>
     <div>
+      <select id="bankType">
+        <option value="1">借记卡</option>
+        <option value="2">贷记卡</option>
+        <option value="3">准贷记卡</option>
+        <option value="4">信用卡</option>
+      </select>
       <button onClick="getCards()">生成20张随机的银行卡号</button>
       <fieldset>
         <legend>卡号列表</legend>
